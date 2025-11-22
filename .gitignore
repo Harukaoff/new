@@ -1,0 +1,92 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+venv310/
+ENV/
+env/
+.venv310/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+
+# Image files (except templates)
+*.jpg
+*.jpeg
+*.png
+!templates/*.png
+
+# Model files (if not using Git LFS)
+# models/*.pt
+
+# Output files
+output/
+output_streamlit/
+runs/
+json_output/
+
+# Test files
+connection_test.png
+beam_split_test.png
+
+# Temporary files
+temp_*.png
+*.tmp
+
+# Documentation
+*.docx
+*.pdf
+*.pptx
+
+# Shortcuts
+*.lnk
+
+# Dataset
+dataset/
+dataset_obb/
+photos/
+drive-download-*/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log

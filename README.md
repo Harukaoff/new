@@ -84,47 +84,35 @@ streamlit run structural_analysis_app.py
 
 ## ☁️ Streamlit Cloudへのデプロイ
 
-### 準備
+詳細なデプロイ手順は [DEPLOY.md](DEPLOY.md) を参照してください。
 
-1. **モデルファイルの配置**
-   - `models/best.pt` にYOLOv8-OBBモデルを配置
-   - ファイルサイズが大きい場合はGit LFSを使用
+### クイックスタート
 
-2. **テンプレート画像の配置**
-   - `templates/` ディレクトリに各要素のテンプレート画像を配置
-
-3. **GitHubリポジトリの作成**
+1. **必要なファイルを準備**
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/your-username/structural-analysis-app.git
-   git push -u origin main
+   mkdir -p models templates
+   # モデルとテンプレート画像を配置
    ```
 
-### デプロイ手順
+2. **GitHubにプッシュ**
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
 
-1. [Streamlit Cloud](https://streamlit.io/cloud)にアクセス
-2. GitHubアカウントでログイン
-3. 「New app」をクリック
-4. リポジトリとブランチを選択
-5. Main file path: `structural_analysis_app.py`
-6. 「Deploy!」をクリック
+3. **Streamlit Cloudでデプロイ**
+   - [Streamlit Cloud](https://streamlit.io/cloud)にアクセス
+   - リポジトリを選択
+   - `structural_analysis_app.py`を指定
+   - Deploy!
 
-### Git LFSの使用（大きなファイル用）
+### トラブルシューティング
 
-```bash
-# Git LFSのインストール
-git lfs install
-
-# モデルファイルをLFS管理下に
-git lfs track "models/*.pt"
-git add .gitattributes
-git add models/best.pt
-git commit -m "Add model file with Git LFS"
-git push
-```
+**`ModuleNotFoundError: No module named 'cv2'`が出た場合**:
+- requirements.txtに`opencv-python-headless`が含まれているか確認
+- packages.txtに必要なシステムパッケージが含まれているか確認
+- 詳細は [DEPLOY.md](DEPLOY.md) を参照
 
 ## 🎨 使い方
 
@@ -191,12 +179,11 @@ git push
 
 このプロジェクトは教育目的で作成されています。
 
-##  開発者
+## 👤 開発者
 
-Haruka Morimoto
+森本遥香 (DA22340)
 
-##  謝辞
+## 🙏 謝辞
 
 - YOLOv8: Ultralytics
 - Streamlit: Streamlit Inc.
-
